@@ -2,40 +2,81 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 
 import './style.scss';
-import gatsbyLogo from '../images/gatsby-icon.png';
-import bulmaLogo from '../images/bulma-logo.png';
+import { Link } from 'gatsby'
 
-const Navbar = () => (
-	<div className="hero-head is-hidden-mobile">
-		<nav className="navbar">
-			<div className="container">
-				<div className="navbar-brand">
-					<a
-						className="navbar-item"
-						href="https://github.com/amandeepmittal/gatsby-bulma-quickstart"
-					>
-						<img src={gatsbyLogo} alt="Logo-1" />
-						<img src={bulmaLogo} alt="Logo-2" />
-					</a>
-				</div>
-				<div id="navbarMenuHeroA" className="navbar-menu">
-					<div className="navbar-end">
-						<span className="navbar-item">
-							<a
-								className="button is-danger is-inverted"
-								href="https://github.com/amandeepmittal/gatsby-bulma-quickstart"
-							>
-								<span className="icon">
-									<FaGithub size="fa-2x" />
-								</span>
-								<span>Download</span>
-							</a>
-						</span>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</div>
-);
+const Navbar = class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      active: false,
+      navBarActiveClass: '',
+    }
+  }
 
-export default Navbar;
+  toggleHamburger = () => {
+    // toggle the active boolean in the state
+    this.setState(
+      {
+        active: !this.state.active,
+      },
+      // after state has been updated,
+      () => {
+        // set the class in state for the navbar accordingly
+        this.state.active
+          ? this.setState({
+              navBarActiveClass: 'is-active',
+            })
+          : this.setState({
+              navBarActiveClass: '',
+            })
+      }
+    )
+  }
+
+  render() {
+    return (
+      <nav
+        className="navbar is-transparent"
+        role="navigation"
+        aria-label="main-navigation"
+      >
+        <div className="container">
+          <div className="navbar-brand">
+
+            {/* Hamburger menu */}
+            <div
+              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              data-target="navMenu"
+              onClick={() => this.toggleHamburger()}
+            >
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+          <div
+            id="navMenu"
+            className={`navbar-menu ${this.state.navBarActiveClass}`}
+          >
+            <div className="navbar-start has-text-centered">
+							<Link className="navbar-item" to="/">
+								Jere Xu
+							</Link>
+
+            </div>
+            <div className="navbar-end has-text-centered">
+							<Link className="navbar-item" to="/about">
+								About
+							</Link>
+							<Link className="navbar-item" to="/portfolio">
+								Portfolio
+							</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    )
+  }
+}
+
+export default Navbar

@@ -1,13 +1,12 @@
 import React from 'react';
 
-import './style.scss';
+import "../styles/index.sass";
 import Helmet from './helmet';
-import Navbar from './navbar';
-
 import Midsection from './midsection';
 import Footer from './footer';
+import Navbar from './navbar';
 
-const Layout = ({ children }) => (
+const Work_Layout = ({ children }) => (
 	<div>
 		<Helmet />
 		<Navbar />
@@ -17,4 +16,4 @@ const Layout = ({ children }) => (
 	</div>
 );
 
-export default Layout;
+export default Work_Layout;

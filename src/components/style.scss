@@ -27,3 +27,13 @@
 		color: $secondary-color;
 	}
 }
+
+.image {
+	width: 50%;
+
+	@media (max-width: 960px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+}

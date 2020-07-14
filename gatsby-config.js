@@ -1,16 +1,16 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Gatsby Bulma Quickstart',
-		author: 'Aman Mittal',
-		imageUrl: 'https://i.imgur.com/Vz81GEl.png',
-		description: 'A Project to bootstrap your next Gatsby + Bulma site.',
-		keywords: `Web developer, Web, Developer, CSS, HTML, JS, Javascript, Gatsby, Bulma Developer, CSS3, HTML5, Seo, Starter`,
-		twitter: 'https://twitter.com/amanhimself',
-		github: `https://github.com/amandeepmittal`,
-		medium: 'https://medium.com/@amanhimself',
+		title: 'Personal Site',
+		author: 'Jere Xu',
+		imageUrl: 'xxx',
+		description: 'This is the central hub for my stuffs.',
+		keywords: `Web developer, Growth engineer, growth hacking, JavaScript, data analytics, content marketing`,
+		twitter: 'https://twitter.com/jtxxuu',
+		github: `https://github.com/jerrytigerxu`,
+		medium: 'https://medium.com/@jeretigerxu',
 		gatsby: 'https://www.gatsbyjs.org/',
 		bulma: 'https://bulma.io/',
-		siteUrl: `https://www.example.com`
+		siteUrl: `https://www.jeretigerxu.me`
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -24,7 +24,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-datocms',
 			options: {
-				apiToken: '74965af87fde04dbd5831360aaa221',
+				apiToken: 'bc7f97b82f42b56204d988cff450e1',
 				preview: false,
 				disableLiveReload: false,
 			},
